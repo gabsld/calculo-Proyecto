@@ -13,30 +13,42 @@ header {
   text-align: center;
 }
 
+/* Navegación */
 nav ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-  background-color: white;
-  color: #003366;
-  text-decoration: none;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
+/* Hover: cuando el cursor pasa encima */
+nav a:hover {
+  background-color: white;
+  color: #003366;
+  text-decoration: none;
+}
+
+/* Enlace activo (scroll detectado por JS) */
+nav a.active {
+  background-color: #ffffff;
+  color: #003366;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+
+/* Contenido principal */
 main {
   padding: 20px;
 }
@@ -48,6 +60,7 @@ section {
   border-radius: 10px;
 }
 
+/* Pie de página */
 footer {
   background: #003366;
   color: white;
@@ -55,20 +68,39 @@ footer {
   padding: 10px;
 }
 
-.contenedor{
-align-items: center;
-align-content: center;
-text-align: center;
-background: #c1d6eb;
-color: aliceblue;
-padding: 15px;
+/* Contenedor del título principal */
+.contenedor {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  background: #c1d6eb;
+  color: aliceblue;
+  padding: 15px;
 }
 
-nav a.active {
-  background-color: #ffffff;
-  color: #003366;
-  border-radius: 6px;
-  padding: 5px 10px;
-  transition: all 0.3s ease;
+/* Responsive: adaptar a pantallas pequeñas */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contenedor h1,
+  .contenedor h2 {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  section {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+
+  iframe,
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
