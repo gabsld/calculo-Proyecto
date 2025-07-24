@@ -15,85 +15,45 @@
     <h2>Simulación de un Terremoto</h2>
     <nav>
       <ul>
-        <li><a href="#procesos">Procesos</a></li>
+        <li><a href="#objetivo">Objetivo</a></li>
+        <li><a href="#procesos">Proceso</a></li>
         <li><a href="#elaboracion">Elaboración</a></li>
         <li><a href="#materiales">Materiales</a></li>
-        <li><a href="#resultado">Resultado Final</a></li>
+        <li><a href="#materiales-exactos">Materiales Detallados</a></li>
+        <li><a href="#codigo">Código Python</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#conclusiones">Conclusiones</a></li>
+        <li><a href="#referencias">Referencias</a></li>
       </ul>
     </nav>
   </header>
 
   <div class="contenedor">
     <h1>Objetivo:</h1>
-    <h2>Describir el análisis sísmico de un sistema de masa - resorte - amortiguador sometido a un terremoto evaluando su comportamiento dinámico, aplicado en este caso a un edificio conocido, el de nuestra escuela.
-    </h2>
+    <h2>Describir el análisis sísmico de un sistema de masa - resorte - amortiguador sometido a un terremoto evaluando su comportamiento dinámico, aplicado en este caso a un edificio conocido, el de nuestra escuela.</h2>
   </div>
 
-  
-
-
   <main>
+    <section id="objetivo">
+      <h3>Objetivo del Proyecto</h3>
+      <p>Describir el análisis sísmico de un sistema de masa - resorte - amortiguador sometido a un terremoto, evaluando su comportamiento dinámico a través de modelos matemáticos y simulaciones numéricas en Python.</p>
+    </section>
+
     <section id="procesos">
       <h3>Proceso</h3>
-      <p><strong>Enfoque del Proyecto:</strong> El cálculo diferencial es una herramienta matemática fundamental en la sismología y la ingeniería sismorresistente, que son las disciplinas que estudian los terremotos y sus efectos. Su aplicación se da en el análisis y modelado de los fenómenos sísmicos, no tanto en la medición directa.
-    </p>
-    <br>
-    <p><strong>Resumen:</strong>
-        La ecuación fundamental del desplazamiento total
-de un punto en una estructura durante un
-terremoto se puede definir como
-Donde representa el desplazamiento del suelo
-debido al sismo, y es el desplazamiento relativo
-entre la masa de la estructura y el suelo.
-El movimiento de un edificio debido a una fuerza
-sísmica puede modelarse de forma simplificada
-como un sistema masa-resorte-amortiguador [1]
-dado por:
-Donde: masa del edificio (kg), con un valor 639 ton. es la segunda derivada del desplazamiento, es decir, la aceleración relativa de la masa con
-respecto al suelo.
-coeficiente de amortiguamiento (N ⋅m/s), con
-valor de 2.24 × 10⁶ N ⋅m/s. es la primer derivada del desplazamiento, es decir, la velocidad relativa de la masa con
-respecto al suelo.
-coeficiente de rigidez del edificio (N/m), con valor de 1 × 10⁸ N /m.
-representa la fuerza de inercia debido a la
-aceleración del terreno, la cuál puede
-considerarse como un efecto de la fuerza sísmica.
-Los parámetros del sistema se aproximaron
-realizando un estudio de los edificios de la
-universidad de la siguiente manera [2] y [3]:
-La rigidez de una columna o pórtico simple de
-un edificio se aproxima como donde es el módulo de elasticidad del material, es el momento de inercia de la sección transversal,
-y es la altura de la columna. Se utiliza un
-valor aproximado de
-1 × 10⁸ N /m para edificios de concreto.
-La masa aproximada del edificio es de
-638,689 kg. El coeficiente de amortiguamiento crítico
-se calcula con la fórmula . El coeficiente de amortiguamiento se
-considero aproximadamente el 7% del
-amortiguamiento crítico , que es un valor típico
-para estructuras de concreto reforzado
-
-Se utilizó un modelo de sistema de masa-resorte- amortiguador para representar la dinámica de una
-estructura. El modelo matemático se tradujo a un sistema de
-ecuaciones diferenciales ordinarias de primer orden. Se empleó la biblioteca
-scipy.integrate.odeint de Python para resolver numéricamente las ecuaciones diferenciales. Se definieron funciones para simular diferentes
-tipos de fuerzas aplicadas, como fuerzas
-sinusoidales amortiguadas y fuerzas de impulso. Los resultados del desplazamiento, la velocidad y
-la fuerza aplicada se visualizan gráficamente.
-
-    </p>
+      <p><strong>Enfoque del Proyecto:</strong> El cálculo diferencial es una herramienta matemática fundamental en la sismología y la ingeniería sismorresistente, que son las disciplinas que estudian los terremotos y sus efectos. Su aplicación se da en el análisis y modelado de los fenómenos sísmicos, no tanto en la medición directa.</p>
+      <br>
+      <p><strong>Resumen:</strong> Se utilizó un modelo de sistema de masa-resorte-amortiguador para representar la dinámica de una estructura. El modelo matemático se tradujo a un sistema de ecuaciones diferenciales ordinarias de primer orden. Se empleó la biblioteca <code>scipy.integrate.odeint</code> de Python para resolver numéricamente las ecuaciones. Se definieron funciones para simular diferentes tipos de fuerzas aplicadas, como fuerzas sinusoidales amortiguadas y fuerzas de impulso. Los resultados del desplazamiento, la velocidad y la fuerza aplicada se visualizaron gráficamente.</p>
     </section>
 
     <section id="elaboracion">
       <h3>Elaboración</h3>
-      <p>Durante esta etapa, construimos una maqueta que simula un terremoto utilizando un motor vibrador y sensores. Los cálculos incluyeron derivadas para modelar el cambio de posición con respecto al tiempo.
-        <br><br>
-        <img src="maqueta.JPG" height="259.90" width="519.27" alt="Maqueta">
-      </p>
+      <p>Durante esta etapa, construimos una maqueta que simula un terremoto utilizando un motor vibrador y sensores. Los cálculos incluyeron derivadas para modelar el cambio de posición con respecto al tiempo.</p>
+      <img src="maqueta.JPG" height="259.90" width="519.27" alt="Maqueta">
     </section>
 
     <section id="materiales">
-      <h3>Materiales</h3>
+      <h3>Materiales Básicos</h3>
       <ul>
         <li>Motor vibrador</li>
         <li>Plataforma de madera</li>
@@ -105,23 +65,61 @@ la fuerza aplicada se visualizan gráficamente.
       </ul>
     </section>
 
-    <section id="resultado">
-      <h3>Resultado Final</h3>
+    <section id="materiales-exactos">
+      <h3>Materiales Detallados (PDF)</h3>
+      <ul>
+        <li>Servomotor MG995 – 1</li>
+        <li>Arduino UNO – 1</li>
+        <li>Cartón de huevo – 1</li>
+        <li>Tabla 56 cm × 35 cm – 1</li>
+        <li>Ruedas locas – 4</li>
+        <li>Espaciadores – 4</li>
+        <li>Google Colab con Python – 1</li>
+      </ul>
+    </section>
 
-      <h4>Video de la Maqueta en Funcionamiento</h4>
+    <section id="codigo">
+      <h3>Fragmento del Código Python Utilizado</h3>
+      <pre><code>
+def applied_force(t):
+    return 10.0 * np.exp(-0.5 * t) * np.sin(2 * np.pi * 0.5 * t)
+
+solution = odeint(mass_spring_damper, initial_conditions, t, args=(m, c, k, applied_force))
+      </code></pre>
+      <p>Este código implementa una fuerza sísmica amortiguada y simula la respuesta del sistema masa-resorte-amortiguador.</p>
+    </section>
+
+    <section id="resultados">
+      <h3>Resultados</h3>
+      <p>Las simulaciones muestran la respuesta del sistema a distintas fuerzas aplicadas. En particular, se visualiza:</p>
+      <ul>
+        <li>Desplazamiento (posición) respecto al tiempo</li>
+        <li>Velocidad del sistema</li>
+        <li>Fuerza aplicada (sísmica)</li>
+      </ul>
+      <p>Estos resultados permiten evaluar la estabilidad y respuesta dinámica de un edificio durante un sismo.</p>
+    </section>
+
+    <section id="conclusiones">
+      <h3>Conclusiones</h3>
+      <p>El uso del cálculo diferencial permite entender cómo las estructuras responden a las fuerzas sísmicas. La simulación en Python, junto con la modelación matemática, resulta fundamental para prever el comportamiento estructural. Como mejora futura, se sugiere usar datos reales de terremotos para validar el modelo y aplicar análisis mecánicos avanzados para detectar fallas potenciales.</p>
+    </section>
+
+    <section id="referencias">
+      <h3>Referencias</h3>
+      <ol>
+        <li>Dynamics of Structures. Theory and Applications to Earthquake Engineering – Anil K. Chopra (2012)</li>
+        <li>Comparación cuantitativa de modelos existentes para propagación de ondas sísmicas – Ketzallina Flores, UNAM (2015)</li>
+        <li>Physics Informed Machine Learning: Seismic Wave Equation – Sadegh Karimpouli, Elsevier (2020)</li>
+      </ol>
+    </section>
+
+    <section>
+      <h3>Video de la Maqueta en Funcionamiento</h3>
       <video width="100%" controls>
         <source src="maqueta-terremoto.mp4" type="video/mp4">
         Tu navegador no soporta el video.
       </video>
-
-      <h4>Modelo Matemático Utilizado</h4>
-      <p>Se utilizó la función senoidal <strong>f(t) = A·sin(ωt)</strong> para simular las ondas sísmicas, donde:</p>
-      <ul>
-        <li><strong>A</strong>: amplitud del movimiento</li>
-        <li><strong>ω</strong>: frecuencia angular</li>
-        <li><strong>t</strong>: tiempo</li>
-      </ul>
-      <p>También se analizaron las derivadas para conocer la velocidad y aceleración del sistema.</p>
 
       <h4>Animación del Terremoto</h4>
       <iframe width="100%" height="400" src="animacion.html"></iframe>
